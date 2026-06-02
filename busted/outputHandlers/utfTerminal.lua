@@ -1,6 +1,6 @@
 local s = require 'say'
 local pretty = require 'pl.pretty'
-local term = require 'term'
+local system = require 'system'
 local luassert = require 'luassert'
 local io = io
 local type = type
@@ -11,7 +11,7 @@ local io_flush = io.flush
 local pairs = pairs
 local colors
 
-local isatty = io.type(io.stdout) == 'file' and term.isatty(io.stdout)
+local isatty = io.type(io.stdout) == 'file' and system.isatty(io.stdout)
 
 return function(options)
   local busted = require 'busted'
