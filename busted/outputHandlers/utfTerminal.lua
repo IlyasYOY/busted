@@ -35,7 +35,7 @@ return function(options)
     luassert:set_parameter("TableErrorHighlightColor", "none")
 
   elseif cliArgs.color then
-    colors = require 'term.colors'
+    colors = require 'busted.outputHandlers.colors'
     luassert:set_parameter("TableErrorHighlightColor", "red")
 
   else
@@ -44,7 +44,7 @@ return function(options)
       colors = setmetatable({}, {__index = function() return function(s) return s end end})
       luassert:set_parameter("TableErrorHighlightColor", "none")
     else
-      colors = require 'term.colors'
+      colors = require 'busted.outputHandlers.colors'
       luassert:set_parameter("TableErrorHighlightColor", "red")
     end
   end
